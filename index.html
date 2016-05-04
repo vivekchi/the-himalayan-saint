@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>La Foret</title>
+<title>la forêt</title>
 <link href="jquery-parallax/style.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script type="text/javascript" src="jquery-parallax/scripts/jquery.parallax-1.1.3.js"></script>
@@ -18,48 +18,60 @@ $(document).ready(function(){
 	//outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
 	$('#intro').parallax("50%", 0.1);
 	$('#second').parallax("50%", 0.1);
-	$('.bg').parallax("50%", 0.4);
-	$('#third').parallax("50%", 0.3);
 
 })
 </script>
+<style>
+.box{
+    background-color:rgba(0,0,0,0.7); 
+	padding: 50px 50px 50px 50px;
+}
+</style>
 </head>
 
 <body>
 	<ul id="nav">
 		<li><a href="#intro" title="Next Section"><img src="jquery-parallax/images/dot.png" alt="Link" /></a></li>
 	    <li><a href="#second" title="Next Section"><img src="jquery-parallax/images/dot.png" alt="Link" /></a></li>
-	    <li><a href="#third" title="Next Section"><img src="jquery-parallax/images/dot.png" alt="Link" /></a></li>
-	    <li><a href="#fifth" title="Next Section"><img src="jquery-parallax/images/dot.png" alt="Link" /></a></li>
 	</ul>
 	
 	<div id="intro">
 		<div class="story">
 	    	<div class="float-left">
-			<h2>la foret</h2>
-	        <p>basic intro of the brand/powder/product</p>
+				<div class="box">
+					<h2>la forêt</h2>
+					<h3>We are in Beta</h3>
+					<p>Which means <b>the forest shop</b> is not open to all,<br> 
+					only to a few, a privileged few<br>
+					<br>
+					And you definitely seem to be one &nbsp&nbsp:)<br>
+					<!--<br><br><br><br><br><br><br>
+					[proceed to the <b>shop</b>]-->
+					</p>
+				</div>
 	        </div>
 	    </div> <!--.story-->
 	</div> <!--#intro-->
 	
 	<div id="second">
-		<div class="story"><div class="bg"></div>
-	    	<div class="float-right">
-	            <h2>cleansing mud</h2>
-	            <p>more detailed intro of product</p>
+		<div class="story">
+	    	<div class="float-left">
+				<div class="box">
+				<h3>Forest produce #1</h3>
+				<h2>Cleansing mud:</h2>          
+				<p>Based on an ancient bathing recipe from the east.<br>
+				This  is a completely nature based mud, which softens and humidifies the skin.<br>
+				And it cleanses and refreshes you like the spring rain 
+	            </p>
+				<a href="https://www.instamojo.com/laforet/sample-776cd/" rel="im-checkout" data-behaviour="remote" data-style="light" data-text="Try it!" data-token="335bd64cf093a66d10bcb5e6b892152f"></a>
+<script src="https://d2xwmjc4uy2hr5.cloudfront.net/im-embed/im-embed.min.js"></script>
+<a href="https://www.instamojo.com/laforet/cleansing-mud-pack-of-3-weeks/" rel="im-checkout" data-behaviour="remote" data-style="light" data-text="Buy" data-token="335bd64cf093a66d10bcb5e6b892152f"></a>
+<script src="https://d2xwmjc4uy2hr5.cloudfront.net/im-embed/im-embed.min.js"></script>
+				</div>
 	        </div>
 	    </div> <!--.story-->
 	    
 	</div> <!--#second-->
-	
-	<div id="third">
-		<div class="story">
-	    	<div class="float-left">
-	        	<h2>Buy/order</h2>
-	            <p>link <a href="https://google.com/">https://google.com/</a></p>
-	        </div>
-	    </div> <!--.story-->
-	</div> <!--#third-->
 	
 </body>
 </html>

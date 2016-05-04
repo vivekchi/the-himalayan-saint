@@ -14,6 +14,7 @@ License: http://creativecommons.org/licenses/by-sa/3.0/ (Attribution Share Alike
 
 body{
 	margin: 0;
+	/*min-width: 980px;*/
 	min-width: 980px;
 	padding: 0;
 }
@@ -82,17 +83,17 @@ h2{
 }
 
 #intro{
-	background:url(images/firstBG.jpg) 50% 0 no-repeat fixed;
+	background:url(images/first.jpg) 100% 0 no-repeat fixed;
 	color: white;
-	height: 600px;
+	height: 700px;
 	margin: 0 auto;
 	padding: 0;
 }
 
 #second{
-	background: url(images/secondBG.jpg) 50% 0 no-repeat fixed;
+	background: url(images/product.jpg) 100% 0 no-repeat fixed;
 	color: white;
-	height: 1300px;
+	height: 700px;
 	margin: 0 auto;
 	overflow: hidden;
 	padding: 0;
@@ -108,11 +109,13 @@ h2{
 	z-index: 200;
 }
 
-#third{
-	background: url(images/thirdBG.jpg) 50% 0 no-repeat fixed;
+#confirmation{
+	background:url(images/last_confirmation.jpg) 100% 0 no-repeat fixed;
+	background-size: cover;
 	color: white;
-	height: 650px;
-	padding: 100px 0 0 0;	
+	height: 700px;
+	margin: 0 auto;
+	padding: 0;
 }
 
 #fifth{
@@ -132,5 +135,5 @@ h2{
 .story .float-left, .story .float-right{
 	padding: 100px 0 0 0;
 	position: relative;
-	width: 350px;	
+		
 }

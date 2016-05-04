@@ -1,0 +1,127 @@
+<div class="wrapper">
+    <div class="modal">
+      <div class="blurrer"></div>
+      <div class="message">
+        <div class="row">
+          I am a transparent blurry modal box which can adapt to any screen size, I'm very cool!
+        </div>
+      </div>
+     </div>
+  </div>
+	<script>
+		var backgroundResizerBlurrer = {
+			
+		  imageAspectRatio: 0,
+
+		  setImageAspectRatio: function(width, height) {
+			this.imageAspectRatio = width / height;
+		  },
+
+		  refreshBackground: function() {
+			var windowWidth = $(window).width();
+			var windowHeight = $(window).height();
+
+			var currentWindowAspectRatio = windowWidth / windowHeight;
+
+			//if the image aspect ratio is smaller than the current viewport's aspect ratio
+			//then we adjust the width instead
+			if (this.imageAspectRatio < currentWindowAspectRatio) {
+			  $(".wrapper").css({
+				'background-size': windowWidth + 'px' + ' auto '
+			  });
+
+			  $(".modal .blurrer").css({
+				'background-size': windowWidth + 'px' + ' auto '
+			  });
+			} else {
+			  //otherwise we adjust the height
+
+			  $(".wrapper").css({
+				'background-size': ' auto ' + windowHeight + 'px'
+			  });
+
+			  $(".modal .blurrer").css({
+				'background-size': ' auto ' + windowHeight + 'px'
+			  });
+			}
+
+			//lastly get the position of the modal so we can adjust the background
+			var modalPos = $(".modal").offset();
+			$(".modal .blurrer").css({
+			  'background-position': "-" + modalPos.left + 'px' + " -" + modalPos.top + 'px'
+			});
+		  }
+		};
+
+		$(function() {
+
+		  //we know our background's width and height so we'll set it here
+		  backgroundResizerBlurrer.setImageAspectRatio(2560, 1600);
+
+		  $(window).resize(function() {
+			backgroundResizerBlurrer.refreshBackground();
+		  });
+
+		  backgroundResizerBlurrer.refreshBackground();
+
+		});
+	</script>
+	<style>
+		html, body {
+		  height: 100%;
+		}
+
+		.wrapper {
+		  background: url(http://www.codingepiphany.com/hotlink-ok/codingepiphany_snow.jpg);
+		  background-position: top left;
+		  background-repeat: no-repeat;
+		  height: 100%;
+		  width: 100%;
+		}
+
+		.modal {
+		  position: relative;
+		  margin: 0 auto;
+		  top: 35%;
+		  height: 200px;
+		  width: 60%;
+		  overflow: hidden;
+		  border-radius: 5px;
+		  background-color: rgba(255, 255, 255, 0.5);
+		}
+
+		.modal .blurrer {
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  background: url(http://www.codingepiphany.com/hotlink-ok/codingepiphany_snow.jpg);
+		  background-position: top left;
+		  background-repeat: no-repeat;
+		  -webkit-filter: blur(5px);
+		  -moz-filter: blur(5px);
+		  -o-filter: blur(5px);
+		  -ms-filter: blur(5px);
+		  filter: blur(5px);
+		  z-index: 10;
+		  height: 200px;
+		  width: 100%;
+		}
+
+		.modal .message {
+		  z-index: 20;
+		  position: relative;
+		  text-align: center;
+		  font-family: helvetica, arial, sans-serif;
+		  color: #fff;
+		  text-shadow: 2px 2px 2px #888;
+		  font-size: 1.3em;
+		  height: 100%;
+		  display: table;
+		}
+
+		.modal .message .row {
+		  display: table-cell;
+		  vertical-align: middle;
+		  padding: 10px;
+		}
+	</style>
